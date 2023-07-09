@@ -35,7 +35,7 @@ menubtn.onclick = () => {
 
 // Active link 
 let sections = document.querySelectorAll('section');
-let navlinks = document.querySelectorAll('.nav-links li a');
+let navlinks = document.querySelectorAll('nav a');
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -47,11 +47,11 @@ window.onscroll = () => {
         if (top >= offset && top < offset + height) {
             navlinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('.nav-links li a[href*=' + id + ']').classList.add('active');
+                document.querySelector('nav a[href*=' + id + ']').classList.add('active');
             });
         };
     });
-    let header = document.querySelector('nav');
+    let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
 
     // remove toggle icon || active link when scroll or click 
