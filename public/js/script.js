@@ -1,43 +1,36 @@
-
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
-
+// Navbar drop down 
+let hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener("click", () => {
+    let navLinks = document.querySelector(".nav-links");
+    let links = document.querySelectorAll(".nav-links li");
     //Animate Links
     navLinks.classList.toggle("open");
     links.forEach((link) => {
         link.classList.toggle("fade");
     });
-
     //Hamburger Animation
     hamburger.classList.toggle("toggle");
 });
+// auto close dropdown while click 
+let links = document.querySelectorAll('.nav-links li');
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        let navLinks = document.querySelector(".nav-links");
+        navLinks.classList.remove("open");
+        links.forEach((link) => {
+            link.classList.toggle("fade");
+        });
+        let hamburger = document.querySelector(".hamburger");
+        hamburger.classList.toggle("toggle");
 
-// Text animation  
-let typed = new Typed(".multi-headline", {
-    strings: ["Frontend Developer", "Gammer", "Graphic Designer", "Freelancer", "B-Loger"],
-    typeSpeed: 80,
-    backSpeed: 80,
-    backdelay: 1000,
-    loop: true
-})
 
-
-// toggle icon  
-let menubtn = document.querySelector('#menu-btn');
-let navbar = document.querySelector('.navbar');
-
-menubtn.onclick = () => {
-    menubtn.classList.toggle("bi-x");
-    navbar.classList.toggle('active');
-}
-
-// Active link 
-let sections = document.querySelectorAll('section');
-let navlinks = document.querySelectorAll('.nav-links li a');
+    });
+});
 
 window.onscroll = () => {
+    // Active link 
+    let sections = document.querySelectorAll('section');
+    let navLinksActive = document.querySelectorAll('.nav-links li a');
     sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 150;
@@ -45,24 +38,25 @@ window.onscroll = () => {
         let id = sec.getAttribute('id');
 
         if (top >= offset && top < offset + height) {
-            navlinks.forEach(links => {
+            navLinksActive.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('.nav-links li a[href*=' + id + ']').classList.add('active');
             });
         };
     });
-    let header = document.querySelector('nav');
-    header.classList.toggle('sticky', window.scrollY > 100);
-
-    // remove toggle icon || active link when scroll or click 
-    menubtn.classList.remove("bi-x");
-    navbar.classList.remove('active');
 };
-
+// Text animation  
+let typed = new Typed(".multi-headline", {
+    strings: ["Frontend Developer", "Gammer", "Graphic Designer", "Freelancer", "B-Loger"],
+    typeSpeed: 80,
+    backSpeed: 80,
+    backDelay: 1500,
+    loop: true
+})
 // scroll animation 
 ScrollReveal({
     reset: true,
-    distance: '80px',
+    // distance: '80px',
     duration: 2000,
     delay: 100
 })

@@ -1,0 +1,13 @@
+About section read more para 
+    In addition to my technical skills, I am a strong communicator and collaborate effectively with cross-functional teams. I believe that effective communication is vital in understanding client requirements and delivering successful projects.
+    I am always eager to stay up-to-date with the latest web development trends and technologies. This allows me to continually expand my skillset and deliver cutting-edge solutions to clients.
+    If you are looking for a dedicated and talented front-end developer, I would love to connect and discuss how I can contribute to your projects. Feel free to reach out to me through the contact information provided below.
+    Thank you for taking the time to learn more about me. I look forward to the opportunity to work together!
+
+Remaining work 
+
+->Read more button working 
+->Cv
+->Contact form with firebase
+->Deploy on google cloud
+->small size projects section
